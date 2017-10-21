@@ -2,16 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class edibleCubeController : MonoBehaviour {
+public class EdibleCubeController : MonoBehaviour {
 
-    public float sizeMultiplier = 1f;
-
-    private GameObject cameraRig;
+    private GameController gameController;
     private MeshRenderer mr;
 
     // Use this for initialization
     void Start () {
-        cameraRig = GameObject.Find("[CameraRig]");
+        gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
         mr = GetComponent<MeshRenderer>();
     }
 	
@@ -20,12 +18,11 @@ public class edibleCubeController : MonoBehaviour {
 		
 	}
 
-    
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag.Equals("MainCamera"))
         {
-            cameraRig.transform.localScale += mr.bounds.size;
+            gameController.Grow(mr.bounds.size);
             gameObject.SetActive(false);
         }
     }
