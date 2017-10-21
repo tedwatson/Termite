@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class edibleCubeController : MonoBehaviour {
 
-    public float inc;
+    public float sizeMultiplier = 1f;
 
     private GameObject cameraRig;
+    private MeshRenderer mr;
 
     // Use this for initialization
     void Start () {
         cameraRig = GameObject.Find("[CameraRig]");
-        
-
+        mr = GetComponent<MeshRenderer>();
     }
 	
 	// Update is called once per frame
@@ -20,15 +20,14 @@ public class edibleCubeController : MonoBehaviour {
 		
 	}
 
+    
     private void OnTriggerEnter(Collider other)
     {
-        print("!");
-        Vector3 scale = cameraRig.transform.localScale;
-        cameraRig.transform.localScale += new Vector3(scale.x + inc, scale.y + inc, scale.z + inc);
-        Destroy(this.gameObject);
-        
-        
-        
-        
+        if (other.gameObject.tag.Equals("MainCamera"))
+        {
+            cameraRig.transform.localScale += mr.bounds.size;
+            gameObject.SetActive(false);
+        }
     }
+    
 }

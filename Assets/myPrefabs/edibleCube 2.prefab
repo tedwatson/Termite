@@ -24,9 +24,9 @@ GameObject:
   - component: {fileID: 23983093796119762}
   - component: {fileID: 114085854337599532}
   - component: {fileID: 54347170960248722}
-  - component: {fileID: 114330742708804722}
+  - component: {fileID: 114937071410721244}
   m_Layer: 0
-  m_Name: edibleCube
+  m_Name: edibleCube 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40,7 +40,7 @@ Transform:
   m_GameObject: {fileID: 1868052018933778}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.49, y: 0.43, z: 0}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
+  m_LocalScale: {x: 5, y: 10, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sizeMultiplier: 1
---- !u!114 &114330742708804722
+--- !u!114 &114937071410721244
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
